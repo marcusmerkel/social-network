@@ -1,0 +1,29 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="container mt-3" id="profile">
+
+    </div>
+
+    <div class="container mt-3" id="posts">
+        
+    </div>
+
+    <div class="container mt-3" id="page-nav-container">
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <!-- Load React & Babel -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script src="{% static 'network/react-components.js' %}"></script>
+    <script src="{% static 'network/helpers.js' %}"></script>
+    <script src="{% static 'network/profile.js' %}"></script>
+    {{ request.user.username|json_script:"username" }}
+{% endblock %}

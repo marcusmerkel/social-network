@@ -1,0 +1,8 @@
+.page-item:hover {
+    cursor: pointer;
+}
+
+.page-item.disabled {
+    cursor: default;
+}
+
